@@ -1,0 +1,10 @@
+{
+  "apps": [
+    {
+      "name": "setoran_tahfiz_api",
+      "script": "npx",
+      "interpreter": "none",
+      "args": "node dist/src/main -p 3006"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "root",
+    "password": "umnQtyNKaWPTcjOAOIqwGUrKyJgtfeee",
+    "database": "setoran_tahfid",
+    "host": "autorack.proxy.rlwy.net",
+    "dialect": "mysql",
+    "port":"12738"
+  }
+}
