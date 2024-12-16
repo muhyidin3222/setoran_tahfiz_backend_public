@@ -104,17 +104,17 @@ export class NotificationService {
     await this.notificationRepository.bulkCreate(dataCreated, {
       individualHooks: true,
     });
-    await firebaseInit
-      .messaging()
-      .sendToTopic(`${body?.type}${body?.id_school}`, message)
-      .then((response) =>
-        console.log(
-          JSON.stringify(response) + ' messages were sent successfully',
-        ),
-      )
-      .catch((error) => {
-        console.log(error);
-      });
+    // await firebaseInit
+    //   .messaging()
+    //   .sendToTopic(`${body?.type}${body?.id_school}`, message)
+    //   .then((response) =>
+    //     console.log(
+    //       JSON.stringify(response) + ' messages were sent successfully',
+    //     ),
+    //   )
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
     return;
   }
 
@@ -157,14 +157,14 @@ export class NotificationService {
           id_setoran,
           id_sertifikat,
         });
-        await firebaseInit
-          .messaging()
-          .send(message)
-          .then((response) =>
-            console.log(
-              JSON.stringify(response) + ' messages were sent successfully',
-            ),
-          );
+        // await firebaseInit
+        //   .messaging()
+        //   .send(message)
+        //   .then((response) =>
+        //     console.log(
+        //       JSON.stringify(response) + ' messages were sent successfully',
+        //     ),
+        //   );
         return resNotification;
       }
       return;

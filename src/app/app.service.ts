@@ -44,10 +44,10 @@ export class AppService {
     const { id_school, fcm_token } = getUser?.dataValues || {};
     if (id_school && fcm_token?.length) {
       try {
-        await firebaseInit
-          .messaging()
-          .subscribeToTopic([fcm_token], `BERITA${id_school.toString()}`);
-        await firebaseInit.messaging().subscribeToTopic([fcm_token], 'GLOBAL');
+        // await firebaseInit
+        //   .messaging()
+        //   .subscribeToTopic([fcm_token], `BERITA${id_school.toString()}`);
+        // await firebaseInit.messaging().subscribeToTopic([fcm_token], 'GLOBAL');
       } catch (error) {
         // console.log(error, 'error');
       }
