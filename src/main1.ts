@@ -7,6 +7,7 @@ import { runInCluster } from './common/library/runInCluster';
 import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import featurePolicy from 'feature-policy';
+import { createServer } from 'http';
 
 const allowedOrigins = [
   'http://localhost:3006',
@@ -43,7 +44,12 @@ async function bootstrap() {
     }),
   );
 
-  await app.listen(port);
+  await app.init();
+  const server = createServer(app.getHttpAdapter().getInstance());
+  return server;
 }
 
-runInCluster(bootstrap);
+export default async function handler(req, res) {
+  const server = await bootstrap();
+  server.emit('request', req, res);
+}
