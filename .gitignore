@@ -338,7 +338,7 @@ temp/
 ormconfig.json
 ormconfig.staging.json
 # dist
-# dist*
+dist*
 .DS_Store
 .env
 .env.*
